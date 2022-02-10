@@ -1,0 +1,17 @@
+<!-- A synchronous request blocks the client until operation completes i.e. browser is unresponsive.
+In such case, javascript engine of the browser is blocked.
+A synchronous (AJAX Web application model.). An asynchronous request doesnt block the client., i.e, the browser is responsive.
+At that time the user can perform other operations also. In such case, javascript engine of the browser is not blocked. -->
+<script>
+const fun2 = () => {
+    setTimeout( () => {
+        console.log('fun2 is starting');
+    }, 3000);
+}
+const fun1 = () =>{
+    console.log('fun1 is starting');
+    fun2();
+    console.log('fun1 is ending');
+}
+fun1();
+</script>

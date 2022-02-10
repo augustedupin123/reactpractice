@@ -1,0 +1,98 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+.class1{
+    padding: top 0;rem;
+    /* padding-bottom: 450px; */
+    background-color: #efefef;
+    height: 490px;
+}
+.class2{
+    padding-top: 50px;
+    margin-bottom: 50px;
+}
+.class3{
+    font-family: 'Red-hat-text',sans-serif;
+    font-size: 1.5rem;
+
+}
+.class4{
+    margin-left: 0;
+    padding-top: 0;
+    padding-left: 0pc;
+    
+}
+.class5{
+    padding-top: 30px;
+    padding-left: 40px ;
+    
+    
+}
+
+.class6{
+    max-width: 100px;
+}
+
+.class8{
+    font-size: "100";
+    margin-left: 100px;
+}
+
+
+
+
+
+
+.topMenu{
+    width: 80%;
+    margin: 0 auto;
+    
+
+}
+.topMenu nav{
+    width: 600px;
+    margin: 0 auto;
+
+}
+.topMenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+.topMenu ul li{
+    float:left;
+    padding:5px 10px;
+}
+
+.topMenu ul li a{
+    font-size: 20px;
+    text-decoration:none ;
+    color: #010101;
+
+
+}
+.topMenu ul li a:hover{
+    color:inherit;
+}
+.topMenu ul li:hover{
+    color:#2ca438;
+    border-top:2px solid #2ca438;
+
+
+}
+
+.topMenu ul li a.buyNow{
+    background-color:#2ca438;
+    border-radius: 20px;
+    padding: 5px 20px;
+    color: #fff;
+}

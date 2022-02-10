@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image_carousel</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1{
+            text-align: center;
+            font-size: 2rem;
+            letter-spacing: 1.5em;
+            padding: .5em 0;
+            text-transform: uppercase;
+
+        }
+        .container{
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .img-container{
+            width: 30%;
+            overflow: hidden;
+            box-shadow: 0 0 10px pink;
+            border-radius: 2rem;
+        }
+        #move{
+            display: flex;
+            transform: translateX(0px);
+            transition: transform 0.3s linear;
+        }
+        img{
+            width: 80%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image carousel</h1>
+    <div class="img-container">
+        <div id="move">
+            <img src="eduford_img/about.png" alt="">
+            <img src="eduford_img/background.png" alt="">
+            <img src="eduford_img/contact.png" alt="">
+            <img src="eduford_img/course.png" alt="">
+        </div>
+    </div>
+    <script src="image_carousel.js"></script>
+</body>
+</html>

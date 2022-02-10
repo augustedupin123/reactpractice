@@ -1,0 +1,34 @@
+<!-- callback function: Any function that is passed as an argument is called as a callback function.
+Instead of immediately returning some result like most functions, functions that use callbacks take some time to produce result.
+The word asynchronous just means 'takes some time'. -->
+<script>
+    let sum = (a,b) => {
+        console.log(`Sum of ${a} and ${b} is ${a+b}`);
+    }
+    let callbackfun = () =>{
+        console.log('callback is called');
+    }
+    sum(5,5);
+    callbackfun(sum(5,5));
+    
+    const getrollNo = () =>{
+        setTimeout( () =>{
+            console.log('API getting roll no.');
+            let roll_no = [1,2,3,4,5];
+            console.log(roll_no);
+            setTimeout ( (rollno) => {
+                const biodata = {
+                    name: 'wayne',
+                    age: 26
+                }
+            console.log(`My roll no is ${rollno}. My name is ${biodata.name} and I am ${biodata.age} years old`);
+            setTimeout((name) => {
+                biodata.gender = 'male',
+                console.log(`My roll no is ${rollno}. My name is ${biodata.name} and I am ${biodata.age} years old, and I am ${biodata.gender}`)
+            }, 2000, biodata.name);
+            } 2000, roll_no[1]);
+        } 2000);
+
+    }
+    getrollNo();
+</script>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>restaurant_menu</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            display: grid;
+            place-items: center;
+            height: 100vh;
+
+        }
+        .menubox {
+            width: 400px;
+            height: auto;
+            box-shadow: 0 0 5px gray;
+            padding: 10px 0;
+            border-radius: 10px;
+            
+        }
+        .menuBox img {
+            width:300px;
+            height: 300px;
+            object-fit: cover;
+            box-shadow: 0 0 5px gray;
+            border-radius: 10px;
+            display: block;
+            margin: auto;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        p {
+            width: 95%;
+            margin: 10px auto;
+        }
+        .btn {
+            text-align: center;
+        }
+        button {
+            background-color: transparent;
+            border: none;
+            font-size: 17px;
+        }
+        #random {
+            box-shadow: 0 0 5px gray;
+            margin: 0 5px;
+            padding: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="menuBox">
+            <h1 id="item">Food Item1</h1>
+            <p id="oneliner">Dummy text this is one
+                purely dummy text but its sublime
+            </p>
+            <img src="images_app/restaurant_1.jpg" alt="img" id="img">
+            <h2 id="hotel">Hotel name1</h2>
+            <p id="desc">Lorem ipsum dolor sit amet consectetur, 
+                adipisicing elit. Eligendi aperiam vero saepe 
+                similique velit repellendus ea 
+                impedit laborum commodi odio?</p>
+            <div class="btn">
+                <button id="prev">&#8592;</button>
+                <button id="random">Random menu</button>
+                <button id="next">&#8594;</button>
+            </div>
+        </div>
+    </div>
+    <script src="restaurant_menu.js"></script>
+</body>
+</html>

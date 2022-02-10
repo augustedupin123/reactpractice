@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox-practice</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        
+        section {
+            width: 100%;
+            background: cyan;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        section div {
+            padding: 20px;
+            border: 1px solid black;
+            /* width: 30%; */
+            flex-basis: 30%;
+
+        }
+        .flexone {
+            /* flex: 2; */
+            background: red;
+            
+        }
+        .flextwo {
+            /* flex: 1; */
+            background: yellow;
+        }
+        .flexthree {
+            /* flex: 1; */
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="flexone">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
+            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type s
+            pecimen book. It has survived not only five centuries, but also the leap into electronic 
+            typesetting, remaining essentially unchanged. 
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem ipsum. 
+        </div>
+        <div class="flextwo">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
+            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type s
+            pecimen book. It has survived not only five centuries, but also the leap into electronic 
+            
+        </div>
+        <div class="flexthree">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
+            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type s
+            pecimen book. It has survived not only five centuries, but also the leap into electronic 
+            typesetting, remaining essentially unchanged. 
+            It was popularised in the 1960s with the release of Letraset sheets containing Lorem ipsum. 
+        </div>
+    </section>
+    
+</body>
+</html>

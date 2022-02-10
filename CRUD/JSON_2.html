@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON_2</title>
+</head>
+<body>
+    
+    <!-- adding and deleting JSON key-value pairs -->
+    
+    
+    
+    
+    <script>
+        var jsonobject2 = {
+            "bigboss" : "2010",
+            "master_chef" : "2011"
+        }
+        jsonobject2.bigboss2 = "2015";
+
+        delete jsonobject2.bigboss2;
+        
+        var jsonobject3 = {
+            "array" : ["kem", "cetinay"]
+        }
+        document.write(jsonobject3.array)
+
+        var jsonobject4 = {
+            "FIFA" : [
+                {
+                    "countryname" : "Brazil",
+                    "Bestplayer" : "Neymar"
+                },
+                {
+                    "countryname" : "Argentina",
+                    "Bestplayer" : "Aguero"
+                }
+            ]
+        }
+        
+
+        document.write(jsonobject4.FIFA[1].countryname);
+        document.write(jsonobject4.FIFA[1].Bestplayer);
+
+        for(x in jsonobject4.FIFA) {
+            document.write(x);
+            for(y in jsonobject4.FIFA[x]) {
+                document.write(y);
+                document.write(jsonobject4.FIFA[x][y]);
+
+            }
+        }
+    </script>
+</body>
+</html>

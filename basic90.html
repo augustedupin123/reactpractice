@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic90 redo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 13px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: #919191;
+            background-color: #232323;
+            display: block;
+        }
+        div.wrapper {
+            display: block;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+        }
+        .row1, .row1 a {
+            color: #C0BAB6;
+            background-color: #333333;
+        }
+        #header {
+            padding: 20px 0;
+        }
+        #header, #container, #footer {
+            display: block;
+            width: 960px;
+            margin: 0 auto;
+        }
+        .clear {
+            clear: both;
+        }
+        .clear:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+            line-height: 0;
+        }
+        #header #hgroup {
+            float: left;
+            margin: 0 0 20px 0;
+        }
+        div {
+            display: block;
+        }
+        #header #hgroup h1 {
+            font-size: 36px;
+        }
+        #header #hgroup h1, #header #hgroup h2 {
+            font-weight: normal;
+            font-style: normal;
+            text-transform: none;
+
+        }
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+            line-height: normal;
+        }
+        h1 {
+            display: block;
+            margin-block-start: 0.67em;
+            margin-block-end: 0.67em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+        a {
+            outline: none;
+            text-decoration: none;
+        }
+        a:-webkit-any-link {
+            cursor:pointer;
+        }
+        #header #hgroup h2 {
+            font-size: 13px;
+        }
+        h2 {
+            display: block;
+            margin-block-start: 0.83em;
+            margin-block-end: 0.83em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+        #header nav {
+            display: block;
+            width: 100%;
+            margin: 0;
+            padding: 20px 0;
+            color: #C0BAB6;
+            background-color: #232323;
+            clear: both;
+        }
+        #header nav ul {
+            padding: 0 20px;
+        }
+        nav ul {
+            margin: 0;
+            list-style: none;
+            padding: 0;
+        }
+        ul {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding-inline-start: 40px;
+        }
+        #header nav li {
+            display: inline;
+            margin-right: 25px;
+            text-transform: uppercase;
+        }
+        li {
+            text-align: -webkit-match-parent;
+        }
+        #header nav li a {
+            color: #C0BAB6;
+            background-color: #232323;
+        }
+        a {
+            outline: none;
+            text-decoration: none;
+        }
+        .clear:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+            line-height: 0;
+        }
+        .row2 {
+            color: #979797;
+            background-color: #FFFFFF;
+        }
+        #container {
+            padding: 30px 0;
+        }
+        #header, #container, #footer {
+            display: block;
+            width: 960px;
+            margin: 0 auto;
+        }
+        .clear {
+            clear: both;
+        }
+        .clear:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+            line-height: 0;
+        }
+        #container #slider {
+            width: 100%;
+        }
+        #container section {
+            display: block;
+            margin-bottom: 30px;
+            padding: 0;
+        }
+        address, article, aside, figcaption, figure, footer, header, nav, section {
+            margin: 0;
+            display: block;
+            padding: 0;
+        }
+        figure {
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 40px;
+            margin-inline-end: 40px;
+        }
+        #container #slider figure img {
+            float: right;
+            width: 630px;
+            height: 300px;
+        }
+        img {
+            margin: 0;
+            padding: 0;
+            border: none;
+            line-height: normal;
+            vertical-align: middle;
+        }
+        #container #slider figure figcaption {
+            display: block;
+            float: left;
+            width: 290px;
+            height: 260px;
+            padding: 20px;
+            overflow: hidden;
+            color: #989898;
+            background-color: #464646;
+            line-height: 1.6em;
+        }
+        #container #slider figure h2 {
+            font-size: 42px;
+            font-weight: normal;
+            font-style: italic;
+            text-transform: none;
+        }
+        h2 {
+            display: block;
+            margin-block-start: 0.83em;
+            margin-block-end: 0.83em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+        p {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+        #container .more {
+            text-align: right;
+        }
+        .clear:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+            line-height: 0;
+        }
+        #container #intro {
+            width: 100%;
+            margin-bottom: 60px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #D6D6D6;
+        }
+        #container section {
+            display: block;
+            margin-bottom: 30px;
+            padding:0;
+
+        }
+        .two_quarter {
+            width: 470px;
+        }
+        .one_quarter, .two_quarter, .three-quarter, .four_quarter {
+            display: block;
+            float: left;
+            margin: 0 20px 0 0;
+        }
+        #container #intro section article h2 {
+            margin-bottom: 15px;
+        }
+        p {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+
+        }
+        .row2 a {
+            color: #FF9900;
+            background-color: #FFFFFF;
+        }
+        #container #homepage {
+            display: block;
+            width: 100%;
+            line-height: 1.6em;
+        }
+        #container .last {
+            margin: 0;
+        }
+        #container #homepage section {
+            margin-bottom: 0;
+        }
+        #container section {
+            display: block;
+            padding: 0;
+        }
+        .one_quarter {
+            width: 225px;
+        }
+        #container #homepage {
+            line-height: 1.6em;
+        }
+        #container #homepage section h2.title {
+            margin: 0 0 25px 0;
+            padding: 0 0 8px 0;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+
+        }
+        #container #homepage section article address, #container #homepage section article time {
+            font-size: 10px;
+            font-style: normal;
+        }
+        #container #homepage #section {
+            margin-bottom: 0;
+        }
+        #container #homepage section nav li {
+            margin: 0 0 8px 0;
+            padding: 0 0 5px 0;
+            border-bottom: 1px solid #D6D6D6;
+        }
+        #container #homepage section nav li.last {
+            margin: 0;
+        }
+        .lastbox {
+            margin-right: 0;
+        }
+        .img1 {
+            float: left;
+            margin: 0 15px 15px 0;
+            clear: left;
+        }
+        .imgholder, .img1, .imgr {
+            padding: 4px;
+            border: 1px solid #D6D6D6;
+            text-align: center;
+        }
+        .two_quarter_lastbox .clear{
+            display: flex;
+            
+
+        }
+
+
+
+        
+
+
+    </style>
+</head>
+<body>
+    <div class="wrapper row1">
+        <header id="header" class="clear">
+            <div id="hgroup">
+                <h1>
+                    <a href="#">Basic90</a>
+                </h1>
+                <h2>Free HTML website template</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Text Link</a></li>
+                    <li><a href="#">Text Link</a></li>
+                    <li><a href="#">Text Link</a></li>
+                    <li><a href="#">Text Link</a></li>
+                    <li class="last"><a href="#">Text Link</a></li>
+                </ul>
+            </nav>
+            
+            
+        </header>
+    </div>
+    <div class="wrapper row2">
+        <div id="container" class="clear">
+            <section id="slider" class="clear">
+                <figure>
+                    <img src="eduford_img/basic89_image.gif" alt>
+                        <figcaption>
+                            <h2>Eu justo augue estas</h2>
+                            <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna. 
+                                Urnaultrices quis curabitur phasellentesque congue magnis vestibulum quismodo 
+                                nulla et feugiat adipiscinia pellentum leo.
+                            </p>
+                            <footer class="more">
+                                <a href="#">Read more</a>
+                            </footer>
+                        </figcaption>
+                </figure>
+                            
+            </section>
+            <div id="intro">
+                <section class="clear">
+                    <article class="two_quarter">
+                        <h2>Lorum ipsum dolor</h2>
+                        <p>
+                            <a href="www.os-templates.com" title="Free website Templates">OS Templates</a>
+                            For full terms of use of this template please read our This 
+                            is a W3C compliant free website template from website template licence.
+                        </p>
+                        <p>
+                            You can use and modify the template for both personal and commercial use. 
+                            You must keep all copyright information and credit links in the template 
+                            and associated files. For more HTML5 templates visit free website templates.
+
+
+                        </p>
+                    </article>
+                    <article class="two_quarter_lastbox">
+                        <figure>
+                            <ul class="clear">
+                                <li>
+                                    <a href="#">
+                                        <img src="eduford_img/smallerimage.gif" width="130" height="130" alt>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="eduford_img/smallerimage.gif" width="130" height="130" alt>
+                                    </a>
+                                </li>
+                                <li class="last">
+                                    <a href="#">
+                                        <img src="eduford_img/smallerimage.gif" width="130" height="130" alt>
+                                    </a>
+                                </li>
+                            </ul>
+                            <figcaption>
+                                <a href="#">View Our Image Gallery Here</a>
+                            </figcaption>
+                        </figure>
+                    </article>
+                </section>
+            </div>
+            <div id="homepage" class="last-clear">
+                <section class="one_quarter">
+                    <h2 class="title">From the blog</h2>
+                    <article>
+                        <header>
+
+                            <h2>Post title</h2>
+                            <address>
+                                <a href="#">Admin</a>
+                                ", domainname.com "
+                            </address>
+                            <time datetime = "2000-04-06">
+                                "Friday, 6"
+                                <sup>th</sup>
+                                "April 2000"
+                            </time>
+
+                        </header>
+
+                        <p>
+                            "Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus 
+                            consequat imperdiet."
+                        </p>
+                        <footer class="more">
+                            <a href="#">Read More</a>
+                        </footer>
+                        
+                    </article>
+                </section>
+                <section class="one_quarter">
+                    <h2 class="title">Quick Links</h2>
+                    <nav>
+                        <ul>
+                            <a href="#"><li>Lorem ipsum dolor sit</li></a>
+                            <a href="#"><li>Amet consectetur</li></a>
+                            <a href="#"><li>Praesent vel sem id</li></a>
+                            <a href="#"><li>Curabitur hendrerit est</li></a>
+                            <a href="#"><li class="last">Sed a nulla urna</li></a>
+
+                        </ul>
+                    </nav>
+                </section>
+                <section class="two_quarter lastbox">
+                    <h2 class="title">About Us</h2>
+                    <img class="imgl" src="eduford_img/smallerimage.gif" width="130" height="130" alt>
+                    <p>
+                        Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam,
+                         a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. 
+                         Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam 
+                         ultrices. Suspendisse in justo eu magna luctus suscipit.
+                    </p>
+                    <footer class="more">
+                        <a href="#">Read More</a>
+                    </footer>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper row 3">
+        <footer id="footer" class="clear">
+            <p class="f1_left">
+                "Copyright 2018 - All rights reserved"
+                <a href="#">Domain name</a>
+            </p>
+            <p class="f1_right">
+                "Template by"
+                <a target="_blank" href="https://www.os-templates.com/" title="free website templates">OS Templates</a>
+            </p>
+        </footer>
+    </div>
+    
+</body>
+</html>

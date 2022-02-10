@@ -1,0 +1,53 @@
+// variables declared with "var" in Javascript are function scoped. Variables declared with "let & const" are block scoped.
+
+<script>
+    var name = "roman";
+    console.log(name);
+
+    const name1 = "reigns";
+    console.log(name1);
+
+    let name2 = "morricone";
+    console.log(name2);
+
+    var name4 = "yannick";
+    name4 = "noah";
+    console.log(name4);
+
+    let name5 = "yannick";
+    name5 = "noah";
+    console.log(name5);
+
+    // const name6 = "yannick";
+    // name6 = "noah";
+    // console.log(name6);
+
+    function modJS(love){
+        if(love){
+            let fname = "silvio";
+            const sname = "berlusconi";
+            var name7 = "portugal";
+            console.log("my name is" + fname + " " + sname);
+        }
+        // console.log("my name is" + fname + " " + sname);
+        console.log(name7);
+        // console.log(fname);
+        // let and const will not be accessible outside the block.
+    }
+
+    modJS(true);
+
+    var whoWillwinToday = "India";
+    if(true){
+        var whoWillwinToday = "NewZealand";
+        console.log(whoWillwinToday);
+    }
+    console.log(whoWillwinToday);
+    // Output new zealand, new zealand.
+    let whoWillwinToday2 = "France";
+    if(true){
+        let whoWillwinToday2 = "Belgium";
+        console.log(whoWillwinToday2);
+    }
+    console.log(whoWillwinToday2);
+</script>

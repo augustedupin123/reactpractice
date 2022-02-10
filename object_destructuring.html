@@ -1,0 +1,15 @@
+<script>
+    // the destructuring assignment syntax is a javascript expression that makes it possible to unpack values from arrays or properties from values
+    //objects into distinct values.
+    const bioData = {
+        name: "Ranvijay",
+        age: 26,
+        deg: 'BTech',
+        hobb : {
+            first: 'playing',
+            sec: 'youtube videos'
+        }
+    }
+    let {name:myname, ages:age ,deg} = bioData;
+    console.log(`my name is ${bioData.name}. My age is ${age} and my highest qualification is ${deg}. I love making ${hobb.sec}`); 
+</script>

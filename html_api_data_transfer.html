@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<table border="1">
+    <thead>1
+        <tr>
+            <th>fname</th>
+            <th>lname</th>
+            <th>tel</th>
+            <th>address</th>
+            <th>city</th>
+            <th>state</th>
+            <th>zip</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+    </tbody>
+</table>
+<script>
+
+    arr_practice2 = [
+    {
+        "fname": "Lora",
+        "lname": "Zehnacker",
+        "tel": "(208)212-8963",
+        "address": "3909 Ac Ln",
+        "city": "Central Lake",
+        "state": "MA",
+        "zip": 50560
+    },
+    {
+        "fname": "Lakshmi",
+        "lname": "Theiss",
+        "tel": "(279)533-9205",
+        "address": "7455 Consequat St",
+        "city": "Vacaville",
+        "state": "MO",
+        "zip": 45885
+    },
+    {
+        "fname": "Marisa",
+        "lname": "Malmfeldt",
+        "tel": "(225)942-3949",
+        "address": "7082 Curabitur Dr",
+        "city": "Tomball",
+        "state": "LA",
+        "zip": 73241
+    },
+    {
+        "fname": "Brent",
+        "lname": "Hansen",
+        "tel": "(185)268-5986",
+        "address": "1992 Ac Ln",
+        "city": "Goodyear",
+        "state": "CA",
+        "zip": 20630
+    },
+    {
+        "fname": "Anteria",
+        "lname": "Carrera",
+        "tel": "(954)137-0027",
+        "address": "3092 Odio Ave",
+        "city": "Pasco",
+        "state": "NH",
+        "zip": 47651
+    },
+    {
+        "fname": "Marguerite",
+        "lname": "Schatz",
+        "tel": "(239)814-9767",
+        "address": "2695 Morbi Ave",
+        "city": "Honolulu",
+        "state": "MS",
+        "zip": 40949
+    },
+    {
+        "fname": "Biliqis",
+        "lname": "Lencowski",
+        "tel": "(255)364-9471",
+        "address": "8217 Placerat Rd",
+        "city": "Middletown",
+        "state": "VT",
+        "zip": 77268
+    },
+    {
+        "fname": "Alana",
+        "lname": "Earls",
+        "tel": "(327)534-5809",
+        "address": "2207 Velit Rd",
+        "city": "Bridgeport",
+        "state": "NY",
+        "zip": 23846
+    },
+    {
+        "fname": "Matthew",
+        "lname": "Tubbytelly",
+        "tel": "(302)578-5007",
+        "address": "50 Sit Ln",
+        "city": "Gettysburg",
+        "state": "WV",
+        "zip": 70720
+    },
+    {
+        "fname": "Elida",
+        "lname": "Bishop",
+        "tel": "(739)383-5755",
+        "address": "4915 Hendrerit Dr",
+        "city": "Fe Warren Afb",
+        "state": "MA",
+        "zip": 15881
+    }
+]
+
+for (var i=0; i<arr_practice2.length; i++) {
+    console.log(arr_practice2[i]);
+    var mytr = document.createElement("tr");
+    // var td1 = document.createElement('td');
+    // var td2 = document.createElement('td');
+    // var td3 = document.createElement('td');
+    // var td4 = document.createElement('td');
+    // var td5 = document.createElement('td');
+    // var td6 = document.createElement('td');
+    // var td7 = document.createElement('td');
+    // td1.innerHTML = arr_practice2[i].fname;
+    // td2.innerHTML = arr_practice2[i].lname;
+    // td3.innerHTML = arr_practice2[i].tel;
+    // td4.innerHTML = arr_practice2[i].city;
+    // td5.innerHTML = arr_practice2[i].state;
+    // td6.innerHTML = arr_practice2[i].address;
+    // td7.innerHTML = arr_practice2[i].zip;
+    // mytr.appendChild(td1);
+    // mytr.appendChild(td2);
+    // mytr.appendChild(td3);
+    // mytr.appendChild(td4);
+    // mytr.appendChild(td5);
+    // mytr.appendChild(td6);
+    // mytr.appendChild(td7);
+
+    for(a in arr_practice2[i]){
+
+        var myTd = document.createElement("td")
+        myTd.innerHTML=arr_practice2[i][a]
+        mytr.appendChild(myTd)
+}
+
+    document.querySelector('tbody').appendChild(mytr);
+}
+
+    
+</script>
+
+</html>

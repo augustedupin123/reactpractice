@@ -1,0 +1,33 @@
+<script>
+class Students{
+    constructor(names, age, cls){
+        this.myname = names;
+        this.age1 = age;
+        this.cls1 = cls;
+            
+    }
+    // If static keyword is not present then it is a an instance method.
+    biodata() {
+            return `Hi I am a class method name ${this.myname}, my age is ${this.age1} and class is ${this.cls1}`;
+    }
+}
+
+class Player extends student {
+    constructor(name, age, cls, game){
+        super(name, age, cls);
+        this.mygame = game;
+    }
+    play_biodata() {
+            console.log(`Hi I am a class method name ${this.myname}, my age is ${this.age1} and class is ${this.cls1} and the game I play is ${mygame}`);
+            return `${super.biodata()}`;
+    }
+
+}
+let obj1 = new Students('lex', 25, 'BTech');
+let obj2 = new Students('Glover', 31, 'BTech');
+obj1.biodata();
+obj2.biodata();
+console.log(obj1);
+console.log(obj1.play_biodata());
+
+</script>

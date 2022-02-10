@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project_1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-image: linear-gradient(orange, #fff);
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid black; */
+            height: 100vh;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-family: cursive;
+        }
+        span {
+            font-size: 2.5rem;
+        }
+        button {
+            background-color: black;
+            color: #fff;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            margin: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Stop Watch</h1>
+            <p><span id="seconds">00</span>:<span id="milliseconds">00</span></p>
+            <button id="start">Start</button>
+            <button id="Stop">Stop</button>
+            <button id="reset">Reset</button>
+        </div>
+    </div>
+
+
+
+    <script src="script1.js"></script>
+</body>
+</html>

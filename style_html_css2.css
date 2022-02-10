@@ -1,0 +1,19 @@
+#bg{
+    background-color: yellow;
+}
+body{
+    background-color: red;
+}
+#bg{
+    background-image: url('images/1.jpg'), url('images/2.jpg');
+    background-repeat: repeat-x;
+    /* background-position: right bottom; */
+    background position: 50px 100px;
+    background position: left top, right bottom;
+    background-size: 500px 700px;
+    background-attachment: fixed;
+
+
+}
+
+

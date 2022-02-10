@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Modal</title>
+    <style>
+        body{
+            background-image: linear-gradient(blue,#fff);
+            height: 100vh;
+        }
+        #myImg{
+            cursor: pointer;
+            transition: .5s;
+        }
+        #myImg:hover{
+            opacity: .5;
+        }
+        .container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-image: radial-gradient(#fff,blue);
+            padding-top: 50px;
+            display: none;
+        }
+        #img {
+            margin: auto;
+            width: 70%;
+            display: block;
+            max-width: 650px;
+            animation: display 1s;
+        }
+        #description{
+            font-size: 35px;
+            color: #fff;
+            position: absolute;
+            left: 5%;
+            right:5%;
+            animation: display 1s;
+        }
+        @keyframes display{
+            from{
+                transform: scale(0);
+            }
+            to{
+                transform: scale(1);
+            }
+        }
+        
+
+    </style>
+</head>
+
+
+<body>
+    <img src="images_app/smalllogo.png" id="myImg" alt="logo" height="100px" width="100px">
+    <div id="imgModal" class="container">
+        <span id="close">&times;</span>
+        <img alt="img" id="img">
+        <div id="description"></div>
+    </div>
+
+
+    <script src="popup.js"></script>
+</body>
+</html>
