@@ -1,21 +1,15 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
-import Heading from './Heading';
-import Para from './para';
+import {add,divi,sub,mult} from './calc';
 function App(){
   return(
     <>
-    <Heading />
-    <Para />
-  <h1>This is city Bangalore</h1>
-  <p>This is karnataka state</p>
-  <ol>
-    <li>bangalore</li>
-    <li>mangalore</li>
-    <li>chikmangalur</li>
-    <li>akshaynagar</li>
-  </ol>
-  </>
+      <ul>
+      <li>The sum of the two nos. is{add(40,4)}</li>
+      <li>The division of the two nos. is{divi(40,4)}</li>
+      <li>The subtraction of the two nos. is{sub(40,4)}</li>
+      <li>The multiplication of the two nos. is {mult(40,4)}</li>
+    </ul>
+    </>
   );
 }
 export default App;
