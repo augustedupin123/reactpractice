@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="fname">First Name : </label>
+        <input type="text" name="" id="fname" /> <br />
+        <label for="">Last Name : </label>
+        <input type="text" name="" id="lname" /> <br />
+        <label for="">Email : </label>
+        <input type="text" name="" id="email" /> <br />
+        <label for="">City : </label>
+        <input type="text" name="" id="city" /> <br />
+        <label for="">State : </label>
+        <input type="text" name="" id="state" /> <br />
+        <button type="button" onclick="getUser()" id="addUser">Get User</button>
+        <button
+          type="button"
+          onclick="updateUser()"
+          id="updateUserBtn"
+          style="display: none"
+        >
+        </button>
+    </form>
+    <br />
+    <table border="1">
+        <thead>
+            <th>First Name</th>
+            <th>Last name</th>
+            <th>Email</th>
+            <th>city</th>
+            <th>state name</th>
+            <th>edit</th>
+            <th>delete</th>
+
+        </thead>
+    </table>
+    <script>
+        var users = JSON.parse(localstorage.getItem("users"));
+        var index;
+        console.log("data from browser", users);
+        if(users==null){
+            users = [];
+        }
+        function getUser() {
+            var user = {
+                fname: "",
+                lname: "",
+                email: "",
+                city: "",
+                state: "",
+            };
+            for (a in user){
+                user[a] = document.getElementById(a).value;
+            }
+            users.push(user);
+            localstorage.setItem("users", JSON.stringify(users));
+            displayAllUsers();
+            clearForm(user);
+        }
+        function displayAllUsers(){
+            document.querySelector("tbody").innerHTML = "";
+            users.forEach((user, i) =>{
+                console.log(i);
+                var myTr = document.createElement("tr");
+                for(a in user){
+                    var myTd = document.createElement("td");
+                    myTd.innerHTML = user[a];
+                    myTr.appendChild(myTd);
+                }
+                var editTd = document.createElement("td");
+                var deleteTd = document.createElement("td");
+                var editBtn = document.createElement("button");
+                editBtn.innerHTML = "EDIT";
+                editBtn.setAttribute("onClick", "editUser(" + i + ")");
+                var deleteBtn = document.createElement("button");
+                deleteBtn.innerHTML = "DELETE";
+                deleteBtn.setAttribute("onClick", "deleteUser(" + i + ")");
+                editTd.appendChild(editBtn);
+                deleteTd.appendChild(deleteBtn);
+                myTr.appendChild(editTd);
+                myTr.appendChild(deleteTd);
+                document.querySelector("tbody").appendChild(myTr);
+            });
+        }
+        // Update a user
+        function editUser(i) {
+        index = i;
+        document.getElementById("addUser").style.display = "none";
+        document.getElementById("updateUserBtn").style.display = "block";
+        var selectedUser = users[i];
+        for (a in selectedUser) {
+          document.getElementById(a).value = selectedUser[a];
+        }
+      }
+
+      function updateUser() {
+        var user = {
+          fname: "",
+          lname: "",
+          email: "",
+          city: "",
+          state: "",
+        };
+        for (a in user) {
+          user[a] = document.getElementById(a).value;
+        }
+        users[index] = user;
+        localStorage.setItem("users", JSON.stringify(users));
+        displayAllUsers();
+        clearForm(user);
+        document.getElementById("addUser").style.display = "block";
+        document.getElementById("updateUserBtn").style.display = "none";
+      }
+      // 4. Delete A User
+      function deleteUser(i) {
+        users.splice(i, 1);
+        localStorage.setItem("users", JSON.stringify(users));
+        displayAllUsers();
+      }
+      // 5. Clearing the Form
+
+      function clearForm(user) {
+        for (a in user) {
+          document.getElementById(a).value = "";
+        }
+      }
+    </script>
+</body>
+</html>
