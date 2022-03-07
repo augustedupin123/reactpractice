@@ -17,6 +17,9 @@ function App4(){
     function submitForm(){
         console.log(name, password);
         alert('afridi');
+        if(name=='admin'){
+            console.log('bhapp');
+        }
     }
     function updateTextField(event){
         setName(event.target.value);
