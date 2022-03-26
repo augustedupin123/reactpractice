@@ -1,0 +1,51 @@
+<!-- JSON- javascript object notation
+JSON is a text format for storing and transporting data
+communication between two programs, JSON objects can be used to 
+convert into python objects
+
+JSON is a format of storing and transporting data
+JSON is often used when data is sent from a server to a web page
+JSON is language independent-->
+
+{
+    "employee" : [
+    {
+        "name": "hamza",
+        "lastname": "abbasi",
+        "age":"28",
+        "profession":"engineer"
+    }]
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON_1</title>
+</head>
+<body>
+    <script>
+        var jsonobject = {
+            "name" : "Hamza",
+            "lastname" : "Abbasi",
+            "age" : "28",
+            "profession" : "developer"
+        }
+  
+        // Adding new key value pair
+        jsonobject.middlename = "bahadur";
+
+        
+        document.write(jsonobject.name);
+        for(flag in jsonobject) {
+            document.write(flag + "<br>");
+            document.write(jsonobject[flag] + "<br>");
+        }
+
+        
+
+    </script>
+</body>
+</html>
