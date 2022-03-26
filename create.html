@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #update{
+            display: none;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="fname">First Name :</label>
+        <input type="text" name="" id="fname" onkeyup="validate()"> <br>
+        <label for="fname">Last Name :</label>
+        <input type="text" name="" id="lname" onkeyup="validate()"> <br>
+        <label for="fname">Email :</label>
+        <input type="text" name="" id="email" onkeyup="validate()"> <br>
+
+        <button onclick="addUser()" type="button" disabled id="add">Add User</button>
+        <button onclick="updateUser()" type="button" id="update">Update</button>
+    </form>
+    <ul>
+        
+    </ul>
+
+    <table border="1">
+        <thead>1
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        var users = JSON.parse(localStorage.getItem("users"))
+        function addUser() {
+            var user = {
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                email: document.getElementById("email").value
+            }
+            users.push(user)
+            displyUsers()
+            // storing Data in local storage
+            // converting Data in to String to JSON - JSON.parse()
+            // Converting data from JSON to String - JSON.stringify()
+           
+            cleardata()// Will clear the form
+        }
+
+       function displyUsers(){
+        localStorage.setItem("users",JSON.stringify(users))
+            console.log(users)
+            document.querySelector("ul").innerHTML = ""
+            document.querySelector('tbody').innerHTML=""
+
+            users.forEach((user,i) => {
+                var mytr = document.createElement("tr");
+                for (a in user) {
+
+                    var myTd = document.createElement("td")
+                    myTd.innerHTML = user[a]
+                    mytr.appendChild(myTd)
+                }
+
+                var td1 = document.createElement("td")
+                var edtBtn = document.createElement("button")
+                edtBtn.setAttribute("onclick","editUser("+i+")")
+                edtBtn.innerHTML="Edit";
+                td1.appendChild(edtBtn)
+                mytr.appendChild(td1)
+
+                var td2 = document.createElement("td")
+                var delBtn = document.createElement("button")
+                delBtn.setAttribute("onclick","deleteUser("+i+")")
+                delBtn.innerHTML ="Delete";
+            
+                td2.appendChild(delBtn)
+                mytr.appendChild(td2)
+
+                document.querySelector('tbody').appendChild(mytr);
+            })
+
+           
+
+            // Creating Li's dynamically
+            // users.forEach((user)=>{
+            //     var myLi = document.createElement("li")
+            //     myLi.innerHTML=user.fname+","+user.lname+","+user.email
+            //     document.querySelector("ul").appendChild(myLi)
+            // })
+       }
+       function deleteUser(i) {
+                let newUsers = users.filter((user)=>{
+                    return user.fname !== users[i].fname
+                })
+                localStorage.setItem("users",JSON.stringify(users))
+                users = newUsers;
+                displyUsers()
+            }
+        function cleardata() {
+            var user = {
+                fname: "",
+                lname: "",
+                email: "",
+            }
+            for(a in user){
+                document.getElementById(a).value=""
+            }
+            // Disable button
+            document.querySelector("button").setAttribute("disabled",true)
+
+
+        }
+
+        function editUser(i){
+            index=i
+            console.log(users[i])
+            document.getElementById("update").style.display="block";
+            document.getElementById("add").style.display="none"
+            for(a in users[i]){
+                document.getElementById(a).value = users[i][a]
+            }
+        }
+
+        function updateUser(){
+            var user = {
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                email: document.getElementById("email").value
+            }
+            users[index]=user 
+            localStorage.setItem("users",JSON.stringify(users))
+            displyUsers()
+            document.getElementById("update").style.display="none";
+            document.getElementById("add").style.display="block"
+            cleardata() 
+
+        }
+        function validate(){
+            var formvalid = true;
+            var user = {
+                fname: "",
+                lname: "",
+                email: "",
+            }
+            for(a in user){
+               user[a]=document.getElementById(a).value
+               if(user[a]==""){
+                   formvalid = false
+               }
+            }
+
+            if(formvalid==true){
+                document.querySelector("button").removeAttribute("disabled")
+            }else{
+                document.querySelector("button").setAttribute("disabled",true)
+            }
+           
+        }
+
+        displyUsers()
+    </script>
+</body>
+
+</html>
