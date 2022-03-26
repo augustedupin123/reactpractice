@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration form</title>
+    <link rel="stylesheet" href="alpha.css" type="text/css">
+</head>
+<body>
+    <div class="main">
+    <div class="register">
+        <h2>Register here</h2>
+        <form id="register" method="post">
+        <label>First name : </label>
+        <br>
+        <input type="text" name="fname" id="name" placeholder="Enter your first name" onkeyup="validate()">
+        <br><br>
+        <label>Last name</label>
+        <br>
+        <input type="text" name="lname" id="name" placeholder="Enter your last name" onkeyup="validate()">
+        <br><br>
+        <label>Your age : </label>
+        <br>
+        <input type="number" name="fname" id="name" placeholder="how old are you?">
+        <br><br>
+        <label>Email :</label>
+        <br>
+        <input type="email" name="email" id="name" placeholder="Enter your valid email" onkeyup="validate()"> 
+        <br><br> 
+        <!-- <label>gender :</label>
+        <br>
+        <input type="radio" name="gender" id="male">
+        <span id="male">Male</span>
+        <input type="radio" name="gender" id="female">
+        <span id="female">Female</span>
+        <br><br> -->
+        <!-- <label>Known language : </label>
+        <br>
+        <input type="checkbox" name="lang" id="hindi">
+        <span id="hindi">Hindi</span>
+        <input type="checkbox" name="lang" id="eng">
+        <span id="eng">English</span>
+        <br><br> -->
+        <input type="submit" value="submit" name="submit" id="submit">
+        <button onclick="addUser()" type="button" disabled id="add">Add User</button>
+        <button onclick="updateUser()" type="button" id="update">Update</button>
+        
+        </form>
+    </div>
+    </div>
+    <table border="1">
+        <thead>1
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+         var users = JSON.parse(localStorage.getItem("users"))
+         function addUser() {
+            var user = {
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                email: document.getElementById("email").value
+            }
+            users.push(user)
+            displyUsers()
+            function displyUsers(){
+        localStorage.setItem("users",JSON.stringify(users))
+            console.log(users)
+            document.querySelector("ul").innerHTML = ""
+            document.querySelector('tbody').innerHTML=""
+
+            users.forEach((user,i) => {
+                var mytr = document.createElement("tr");
+                for (a in user) {
+
+                    var myTd = document.createElement("td")
+                    myTd.innerHTML = user[a]
+                    mytr.appendChild(myTd)
+                }
+
+                var td1 = document.createElement("td")
+                var edtBtn = document.createElement("button")
+                edtBtn.setAttribute("onclick","editUser("+i+")")
+                edtBtn.innerHTML="Edit";
+                td1.appendChild(edtBtn)
+                mytr.appendChild(td1)
+
+                var td2 = document.createElement("td")
+                var delBtn = document.createElement("button")
+                delBtn.setAttribute("onclick","deleteUser("+i+")")
+                delBtn.innerHTML ="Delete";
+            
+                td2.appendChild(delBtn)
+                mytr.appendChild(td2)
+
+                document.querySelector('tbody').appendChild(mytr);
+            })
+            function deleteUser(i) {
+                let newUsers = users.filter((user)=>{
+                    return user.fname !== users[i].fname
+                })
+                localStorage.setItem("users",JSON.stringify(users))
+                users = newUsers;
+                displyUsers()
+            }
+        function cleardata() {
+            var user = {
+                fname: "",
+                lname: "",
+                email: "",
+            }
+            for(a in user){
+                document.getElementById(a).value=""
+            }
+            document.querySelector("button").setAttribute("disabled",true)
+
+        }
+        function updateUser(){
+            var user = {
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                email: document.getElementById("email").value
+            }
+            users[index]=user 
+            localStorage.setItem("users",JSON.stringify(users))
+            displyUsers()
+            document.getElementById("update").style.display="none";
+            document.getElementById("add").style.display="block"
+            cleardata() 
+
+        }
+        function validate(){
+            var formvalid = true;
+            var user = {
+                fname: "",
+                lname: "",
+                email: "",
+            }
+            for(a in user){
+               user[a]=document.getElementById(a).value
+               if(user[a]==""){
+                   formvalid = false
+               }
+            }
+
+            if(formvalid==true){
+                document.querySelector("button").removeAttribute("disabled")
+            }else{
+                document.querySelector("button").setAttribute("disabled",true)
+            }
+           
+        }
+
+        displyUsers()
+
+    </script>
+</body>
+</html>
