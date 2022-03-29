@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="code_generator_css.css">
+    <title>code practice</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>QR code generator</h1>
+            <p>paste a url or enter text to create QR code</p>
+        </header>
+        <div class="form">
+            <input type="text" placeholder="Enter text or url">
+            <button>generate QR code</button>
+        </div>
+        <div class="qr_code">
+            <img src="qr-code.png" alt="qr_code">
+        </div>
+    </div>
+    <script>
+        const wrapper = document.querySelector(".wrapper");
+        qrinput = wrapper.querySelector(".form input");
+        generateBtn = wrapper.querySelector(".form button");
+        qrImg = wrapper.querySelector(".qr-code img");
+
+
+        generateBtn.addEventListener("click", ()=>{
+            generateBtn.innertext = "generating qr value";
+            let qrvalue = qrinput.value;
+            if(!qrvalue) return;
+            qrimg.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${qrvalue}`;
+            qrimg.addEventListener("load", ()=>{
+                wrapper.classList.add("active");
+                generateBtn.innertext = "generating qr value";
+            })
+            
+        })
+    </script>
+</body>
+</html>
