@@ -1,21 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Deena} from './multiple_components';
 
-import App from './App';
-import Raju from './Raju'
-import { Sadik } from './multiple_components'
-import Raju1 from './class_component'
-import Parentcomp from './Parentcomponent';
-// above step means we are bringing a functional component from another javascript file.
+
+import Greet from './Greet';
+import Greet1 from './Greet1';
+import Welcome from './welcome';
+import Hello from './Hello1';
+import reportWebVitals from './reportWebVitals';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-    <Raju />
-    <Sadik />
-    <Raju1 />
-    <Deena />
-    {/* <Parentcomp /> */}
+    <Greet />
+    <Greet1 name="harry" superhero = 'ironMan'>
+      <p>This is sidekick prop</p>
+    </Greet1>
+    <Greet1 name="meghan" superhero = 'hee-man'>
+      <button>Action</button>
+    </Greet1>
+    <Greet1 name="andrew"superhero = 'spiderman'/>
+    
+    <Welcome name="andrew"superhero = 'spiderman'/>
+    <Welcome name="harry" superhero = 'ironMan'/>
+    <Welcome name="meghan" superhero = 'hee-man'/>
+    <Hello />
+    
   </React.StrictMode>,
   document.getElementById('root')
 );
@@ -23,4 +31,4 @@ ReactDOM.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-
+reportWebVitals();
