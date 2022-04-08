@@ -1,9 +1,11 @@
-
+// import logo from './logo.svg';
+// import './App.css';
+import User from './User';
 
 function App() {
   return (
     <div className="App">
-      <h2>welcome to React JS</h2>
+      <User />
     </div>
   );
 }
