@@ -1,23 +1,12 @@
-import React from "react";
+import React from 'react';
+import "../App";
 
-const navbar = ({ filterItem, menuList }) => {
-  return (
-    <>
-      <nav className="navbar">
-        <div className="btn-group">
-          {menuList.map((curElem) => {
-            return (
-              <button
-                className="btn-group__item"
-                onClick={() => filterItem(curElem)}>
-                {curElem}
-              </button>
-            );
-          })}
+const Navbar = () => {
+    return (
+        <div className='navbar'>
+            <div><h1>Football App ⚽</h1></div>
         </div>
-      </nav>
-    </>
-  );
-};
+    )
+}
 
-export default navbar;
+export default Navbar
